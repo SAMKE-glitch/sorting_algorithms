@@ -5,6 +5,7 @@
  * @array: pointer to the array
  * @low: start index of the partion
  * @high: ending of the partion
+ * size: size of array
  * Return: index of the pivot element
  */
 int lomuto_partition(int *array, int low, int high, size_t size)
@@ -44,6 +45,8 @@ int lomuto_partition(int *array, int low, int high, size_t size)
  * @array: pointer to array
  * @low: starting index of partition
  * @high: ending index of the partition
+ * size: size of array
+ * Return: void
  */
 void quicksort(int *array, int low, int high, size_t size)
 {
@@ -62,6 +65,7 @@ void quicksort(int *array, int low, int high, size_t size)
  * quick_sort - sort an array of intergers in ascending order using quick sort algorith
  * @array: pointer to the array
  * @size: size of the array
+ * Return: void
  */
 void quick_sort(int *array, size_t size)
 {
