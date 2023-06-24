@@ -16,7 +16,6 @@ void insertion_sort_list(listint_t **list)
 
 	cur = (*list)->next;
 
-	if
 	while (cur != NULL)
 	{
 		next = cur->next;
