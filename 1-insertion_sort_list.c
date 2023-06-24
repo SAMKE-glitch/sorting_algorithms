@@ -8,6 +8,7 @@
 void insertion_sort_list(listint_t **list)
 {
     listint_t *cur, *temp, *prev, *next;
+    int sorted = 1;
 
     if (list == NULL || *list == NULL || (*list)->next == NULL)
         return;
@@ -45,4 +46,6 @@ void insertion_sort_list(listint_t **list)
 
         cur = temp;
     }
+    if (sorted)
+	    return;
 }
