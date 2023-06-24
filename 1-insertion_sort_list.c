@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - Sort a doubly linked list of intergers in ascending order
+ * insertion_sort_list - Sort doubly linked list of ints in ascending order
  *
  * @list: Pointer to doubly linked list to be sorted
  * Return: void
@@ -15,18 +15,20 @@ void insertion_sort_list(listint_t **list)
 		return;
 
 	cur = (*list)->next;
+
+	if
 	while (cur != NULL)
 	{
 		next = cur->next;
 		prev = cur->prev;
-		
+
 		while (prev != NULL && prev->n > cur->n)
 		{
 			prev->next = cur->next;
-			
+
 			if (cur->next != NULL)
 				cur->next->prev = prev;
-			
+
 			cur->prev = prev->prev;
 			cur->next = prev;
 
