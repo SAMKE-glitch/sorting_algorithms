@@ -7,7 +7,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *cur, *temp, *prev, *next;
+    listint_t *cur, *temp, *prev;
 
     if (list == NULL || *list == NULL || (*list)->next == NULL)
         return;
@@ -16,33 +16,34 @@ void insertion_sort_list(listint_t **list)
 
     while (cur != NULL)
     {
-        temp = cur->next;
+        temp = cur;
         prev = cur->prev;
 
         while (prev != NULL && prev->n > cur->n)
         {
-            next = prev->prev;
+            prev->next = temp->next;
 
             /* Adjust pointers for swapping */
-            prev->next = cur->next;
-            if (cur->next != NULL)
-                cur->next->prev = prev;
+            /*prev->next = cur->next;*/
+            if (temp->next != NULL)
+                temp->next->prev = prev;
 
-            cur->prev = prev->prev;
-            cur->next = prev;
+            temp->prev = prev->prev;
+            temp->next = prev;
 
             if (prev->prev != NULL)
-                prev->prev->next = cur;
+                prev->prev->next = temp;
             else
-                *list = cur;
+                *list = temp;
 
-            prev->prev = cur;
+            prev->prev = temp;
+	    prev = temp->prev;
 
             /* Update prev for the next iteration */
-            prev = next;
+            /*prev = next;*/
 	    print_list(*list);
         }
 
-        cur = temp;
+        cur = cur->next;
     }
 }
