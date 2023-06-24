@@ -1,20 +1,6 @@
 #include "sort.h"
 
 /**
- * swap - swap two values
- * @a: pointer of first value
- * @b: pointer to second value
- */
-void swap(int *a, int *b)
-{
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-/**
  * lomuto_partition - Lamuto partition scheme
  * @array: pointer to the array
  * @low: start index of the partion
