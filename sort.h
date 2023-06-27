@@ -36,6 +36,8 @@ void quick_sort(int *array, size_t size);
 int lomuto_partition(int *array, int low, int high, size_t size);
 void quicksort(int *array, int low, int high, size_t size);
 void swap_node(listint_t *first, listint_t *last);
+void split_array(int *array, int *temp,  size_t start, size_t end);
+void sub_array_merge(int *array, int *temp, size_t ls, size_t le, size_t rs, size_t re);
 
 /*advance task*/
 void shell_sort(int *array, size_t size);
