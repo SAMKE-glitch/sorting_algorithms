@@ -1,27 +1,5 @@
 #include "sort.h"
 
-
-/**
- * get_max - function that returns max element in that array
- * @array: array to be checked
- * @size: size of the array
- * Return: Integer
- */
-int get_max(int *array, size_t size)
-{
-	int max, i;
-
-
-	for (i = 0; i < (int)size; i++)
-	{
-		if (array[i] > max)
-		{
-			max = array[i];
-		}
-	}
-	return (max);
-}
-
 /**
  * counting_sort - sort an array of intergers in ascending order using
  * the counting sort alogarithm
@@ -36,8 +14,12 @@ void counting_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	/*max value of array*/
-	max = get_max(array, size);
+	max = 0;
+	for (i = 0; i < (int)size; i++)
+	{
+		if (array[i] > max)
+			max = array[i];
+	}
 	count_array = malloc((max + 1) * sizeof(int));
 	if (count_array == NULL)
 		return;
