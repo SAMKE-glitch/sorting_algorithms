@@ -38,14 +38,12 @@ void counting_sort(int *array, size_t size)
 		free(count_array);
 		return;
 	}
-
 	/*sort array*/
 	for (i = 0; i < (int)size; i++)
 	{
 		sort_array[count_array[array[i]] - 1] = array[i];
 		count_array[array[i]]--;
 	}
-
 	/*copy sort array to og array*/
 	memcpy(array, sort_array, size * sizeof(int));
 
