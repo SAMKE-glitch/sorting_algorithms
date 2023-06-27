@@ -54,14 +54,17 @@ void split_array(int *array, int *temp,  size_t start, size_t end)
  * @re: right end
  * Return: void
  */
-void sub_array_merge(int *array, int *temp, size_t ls, size_t le, size_t rs, size_t re)
+void sub_array_merge(int *array, int *temp, size_t ls,
+			size_t le, size_t rs, size_t re)
 {
 	size_t i, j, k, left_size, right_size;
 
 	left_size = le - ls + 1;
 	right_size = re - rs + 1;
 
-	i = ls; j = rs; k = 0;
+	i = ls;
+	j = rs;
+	k = 0;
 
 	while (i <= le && j <= re)
 	{
@@ -83,7 +86,7 @@ void sub_array_merge(int *array, int *temp, size_t ls, size_t le, size_t rs, siz
 	}
 	else
 	{
-		while ( i <= le)
+		while (i <= le)
 		{
 			temp[k++] = array[i++];
 		}
