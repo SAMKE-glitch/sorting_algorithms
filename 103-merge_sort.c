@@ -77,19 +77,13 @@ void sub_array_merge(int *array, int *temp, size_t ls,
 			temp[k++] = array[j++];
 		}
 	}
-	if (i > le)
+	while (j <= re)
 	{
-		while (j <= re)
-		{
-			temp[k++] = array[j++];
-		}
+		temp[k++] = array[j++];
 	}
-	else
+	while (i <= le)
 	{
-		while (i <= le)
-		{
-			temp[k++] = array[i++];
-		}
+		temp[k++] = array[i++];
 	}
 	for (i = 0; i < left_size; i++)
 	{
